@@ -7,6 +7,14 @@ Ez a **portfolio** egy kis szösszenet. Elsősorban referenciakét használható
 ## Miért készült ez az oldal?
 Állásinterjú esetében jól jön referenciaként, mint CV kiegészítő. Még van néhány hiányosság, de majd kiegészítem. Néhány projektemet (elsősorban web) be is mutatom.
 
+## Hasznos elolvasni?
+Talán...
+
+## Kinek ajánlom?
+Cégvezetőknek.
+
+## Egyéb infó?
+Az oldalon.
 
 
 
