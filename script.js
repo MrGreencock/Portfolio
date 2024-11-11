@@ -13,7 +13,6 @@ $(document).ready(function(){
         }
     });
 
-
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
         $('html').css("scrollBehavior", "auto");
@@ -64,3 +63,35 @@ $(document).ready(function(){
         }
     });
 });
+
+function detectLanguage(code) {
+    const jsKeywords = ['function', 'console.log', 'let', 'var', 'const', 'for', 'while', 'if', 'else', 'alert', 'document', 'getElementById', 'innerText'];
+    let jsMatches = jsKeywords.some(keyword => code.includes(keyword));
+    if (jsMatches) {
+        return 'javascript';
+    }  
+    else {
+        return 'unknown';
+    }
+}
+
+function detectAndRunCode() {
+    const code = document.getElementById('codeArea').value;
+    const language = detectLanguage(code);
+
+    if (language === 'javascript') {
+        runJavaScript(code);
+    }
+     else {
+        document.getElementById('output').innerText = 'Nem sikerült felismerni a nyelvet.';
+    }
+}
+
+function runJavaScript(code) {
+    try {
+        const result = eval(code);  // Vigyázat: Biztonsági kockázat!
+        document.getElementById('output').innerText = `JavaScript eredmény: sikeres`;
+    } catch (error) {
+        document.getElementById('output').innerText = `Hiba (JavaScript): ${error.message}`;
+    }
+}
